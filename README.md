@@ -6,7 +6,7 @@ This repository contains a **Stateful AI Chatbot** that makes LLM calls using:
 - **Gemini** (Google)
 - **Ollama** with **Llama** models (local), e.g. **Llama3**
 
-The chatbot is “stateful” because it **maintains conversation context** for sessionacross messages using a configurable memory strategy (see below). Provider calls match a minimal FastAPI setup: **Gemini** via `client.models.generate_content(model=..., contents=prompt)` and **Ollama** via `client.chat(model=..., messages=[...])`. API keys and host/model settings are read from **`.env`** (see **Run Locally**).
+The chatbot is “stateful” because it **maintains conversation context** for session across messages using a configurable memory strategy (see below). Provider calls match a minimal FastAPI setup: **Gemini** via `client.models.generate_content(model=..., contents=prompt)` and **Ollama** via `client.chat(model=..., messages=[...])`. API keys and host/model settings are read from **`.env`** (see **Run Locally**).
 
 ## Persistence (Redis)
 History is **not** kept in process memory. It is stored in **Redis** so it survives restarts and scales across instances.
